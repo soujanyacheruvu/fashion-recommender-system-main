@@ -1,0 +1,7 @@
+tensorflow
+numpy
+os
+tqdm
+pandas
+streamlit
+scikit-learn
