@@ -1,7 +1,7 @@
 import tensorflow
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.layers import GlobalMaxPooling2D
-from tensorflow.keras.applications.resnet50 import ResNet50,preprocess_input
+from tensorflow.keras.applications.resnet50 import ResNet50, preprocess_input
 import numpy as np
 from numpy.linalg import norm
 import os
@@ -30,8 +30,8 @@ def extract_features(img_path,model):
 
 filenames = []
 
-for file in os.listdir('images'):
-    filenames.append(os.path.join('images',file))
+for file in os.listdir('fashion-dataset/images'):
+    filenames.append(os.path.join('fashion-dataset/images',file))
 
 feature_list = []
 
