@@ -25,11 +25,15 @@ st.title('Fashion Recommender System')
 
 def save_uploaded_file(uploaded_file):
     try:
-        with open(os.path.join('uploads',uploaded_file.name),'wb') as f:
+        destination_path = os.path.join('uploads', uploaded_file.name)
+        with open(destination_path, 'wb') as f:
             f.write(uploaded_file.getbuffer())
-        return 1
-    except:
-        return 0
+        return 1  # Return 1 for success
+    except Exception as e:
+        # Print or log the error message for debugging purposes
+        print(f"Error while saving the uploaded file: {e}")
+        return 0  # Return 0 for failure
+
 
 def feature_extraction(img_path,model):
     img = image.load_img(img_path, target_size=(224, 224))
